@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <template id="l10n_mx_edi_addenda_insabi" name="Addenda INSABI">
+<t t-if="record._is_addenda_insabi()">
+            <t t-set="insabi_data" t-value="data_addenda.get('insabi_data') or ''"/>
+
+            <REM>
+                <NOS><t t-out="insabi_data.get('NOS')"/></NOS>
+                <OR><t t-out="insabi_data.get('OR')"/></OR>
+                <CLUES><t t-out="insabi_data.get('CLUES')"/></CLUES>
+                <CONTRATO><t t-out="insabi_data.get('CONTRATO')"/></CONTRATO>
+                <FEEX><t t-out="insabi_data.get('FEEX')"/></FEEX>
+                <FEEN><t t-out="insabi_data.get('FEEN')"/></FEEN>
+                <FERE><t t-out="insabi_data.get('FERE')"/></FERE>
+            </REM>
+</t>
+        </template>
+        <record id="l10n_mx_edi_addenda_insabi" model="ir.ui.view">
+            <field name="l10n_mx_edi_addenda_flag">True</field>
+        </record>
+
+    </data>
+</odoo>
